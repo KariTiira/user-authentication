@@ -1,0 +1,29 @@
+import React from 'react'
+import axios from 'axios'
+
+const Register = () => {
+    const onSubmit = (e) => {
+        e.preventDefault()
+        console.log(e)
+        axios.post("http://localhost:5050/register", {"etunimi": "Miisa", "sukunimi": "Hippunen", "email": "miisuli", "password": "salasana123"}).then( (response) => {
+            console.log(response)
+        })
+    }
+
+    return (
+        <form onSubmit= {onSubmit} >
+            <label htmlFor="etunimi">Etunimi</label>
+            <input name="etunimi" id="etunimi"/> 
+            <label htmlFor="sukunimi">Sukunimi</label>
+            <input name="sukunimi" id="sukunimi"/> 
+            <label htmlFor="email">Sähköposti</label>
+            <input name="email" id="email"/> 
+            <label htmlFor="password">Salasana</label>
+            <input name="password" id="password"/> 
+            <input type="submit" />
+        </form>
+        
+    )
+}
+
+export default Register
