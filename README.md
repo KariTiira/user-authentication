@@ -13,25 +13,25 @@ Tee React.js-sovellus, jossa käyttäjä voi:
 
 ## Ohjeet
 
-1. Frontend:
+**1. Frontend:**
 
 - Luo yksinkertainen React.js-sovellus.
 - Käytä kirjastoa, kuten react-router-dom navigointiin.
 - Lisää kirjautumis- ja rekisteröintilomakkeet.
 - Toteuta yksityinen reititys (Private Routes), joka sallii pääsyn tiettyihin näkymiin vain, jos käyttäjä on kirjautunut.
 
-2. Backend (valinnainen):
+**2. Backend** (valinnainen):
 
 - Voit käyttää Firebase Authenticationia, tai toteuttaa oman backendi esimerkiksi Node.js:llä ja Expressillä.
 - Toteuta JWT-todennus, jossa backend generoi ja vahvistaa kirjautumistokenit.
 
-3. Toiminnot:
+**3. Toiminnot:**
 
 - Kun käyttäjä kirjautuu onnistuneesti, hän saa todennustokenin (esim. JWT tai Firebase ID Token).
 - Tallennettu token säilytetään turvallisesti (esim. httpOnly-evästeenä tai localStorage-muistissa).
 - Tarkista token jokaisessa suojatussa reitissä ja salli pääsy vain, jos token on voimassa.
 
-4. Open Source -kirjastot:
+**4. Open Source -kirjastot:**
 
 - Firebase Authentication: Jos käytät Firebasea, implementoi sen valmiit kirjautumis- ja rekisteröintitoiminnot.
 - JWT: Käytä kirjastoja kuten jsonwebtoken ja axios käyttäjätokenin validointiin.
