@@ -1,12 +1,54 @@
-# React + Vite
+# Käyttäjän todentaminen ja valtuuttaminen React.js:ssä
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tämän tehtävän avulla opit tärkeitä React.js-konsepteja, kuten komponenttien hallintaa, reititystä ja käyttäjätunnistusta avoimen lähdekoodin kirjastoilla.
 
-Currently, two official plugins are available:
+## Tehtävän kuvaus
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tee React.js-sovellus, jossa käyttäjä voi:
 
-## Expanding the ESLint configuration
+1. Rekisteröityä luomalla käyttäjätilin.
+2. Kirjautua sisään ja saada henkilökohtaisen näkymän.
+3. Nähdä vain omia tietojaan, kun hän on kirjautuneena.
+4. Valtuuttaminen toteutetaan siten, että tietyt näkymät ovat vain kirjautuneille käyttäjille.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Ohjeet
+
+1. Frontend:
+
+- Luo yksinkertainen React.js-sovellus.
+- Käytä kirjastoa, kuten react-router-dom navigointiin.
+- Lisää kirjautumis- ja rekisteröintilomakkeet.
+- Toteuta yksityinen reititys (Private Routes), joka sallii pääsyn tiettyihin näkymiin vain, jos käyttäjä on kirjautunut.
+
+2. Backend (valinnainen):
+
+- Voit käyttää Firebase Authenticationia, tai toteuttaa oman backendi esimerkiksi Node.js:llä ja Expressillä.
+- Toteuta JWT-todennus, jossa backend generoi ja vahvistaa kirjautumistokenit.
+
+3. Toiminnot:
+
+- Kun käyttäjä kirjautuu onnistuneesti, hän saa todennustokenin (esim. JWT tai Firebase ID Token).
+- Tallennettu token säilytetään turvallisesti (esim. httpOnly-evästeenä tai localStorage-muistissa).
+- Tarkista token jokaisessa suojatussa reitissä ja salli pääsy vain, jos token on voimassa.
+
+4. Open Source -kirjastot:
+
+- Firebase Authentication: Jos käytät Firebasea, implementoi sen valmiit kirjautumis- ja rekisteröintitoiminnot.
+- JWT: Käytä kirjastoja kuten jsonwebtoken ja axios käyttäjätokenin validointiin.
+
+**Vaiheet**
+- Asenna tarvittavat kirjastot:
+- Luo React-komponentit:
+
+    - Login.js: Käyttäjän kirjautumislomake.
+    - Register.js: Käyttäjän rekisteröintilomake.
+    - Dashboard.js: Henkilökohtainen näkymä kirjautuneelle käyttäjälle.
+    - PrivateRoute.js: Reitityslogiikka kirjautuneille.
+
+- Valtuutuksen esimerkki: 
+    - Jos token ei ole voimassa, näytä käyttäjälle virheilmoitus tai ohjaa hänet kirjautumissivulle.
+
+**Bonus:**
+- Lisää logout-toiminto.
+- Tee erillinen "admin"-näkymä, johon vain admin-oikeudet omaavat käyttäjät pääsevät.
+- Dokumentoi tehtävä README.md-tiedostoon.
