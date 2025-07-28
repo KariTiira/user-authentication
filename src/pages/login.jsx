@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
-const Login = () => {
+const Login = ({setIsLoggedIn}) => {
     const navigate = useNavigate()
     const onSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +14,7 @@ const Login = () => {
             const token = response.data.token
 
             localStorage.setItem("token", token)
+            setIsLoggedIn(true)
             navigate('/')
         }).catch((error) => {
             console.log(error)

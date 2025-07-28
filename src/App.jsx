@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -12,14 +12,20 @@ import {
 } from "react-router-dom";
 
 function App() {
-const token = localStorage.getItem("token")
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    useEffect( () => {
+        const token = localStorage.getItem("token")
+        if(token) {
+            setIsLoggedIn(true) 
+        }
+    }, [])
     return (
         <Router>
             <div>
                 <nav className='navbar'>
                     <ul>
                         <li className='navbar-link navbar-link-home'><Link to="/">Home</Link></li>
-                        {token ? (
+                        {isLoggedIn ? (
                         <>
                             {/** Tämä renderöidään jos ollaan kirjautuneena sisäänn */}
                             <li className='navbar-link'><Link to="/profile">Profile</Link></li>
@@ -37,7 +43,7 @@ const token = localStorage.getItem("token")
                 {/* A <Switch> looks through its children <Route>s and
                     renders the first one that matches the current URL. */}
                 <Routes>
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<Login setIsLoggedIn = {setIsLoggedIn} />} />
                 <Route path="/register"  element={<Register />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/" element={<Home />} />
