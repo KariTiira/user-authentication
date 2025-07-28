@@ -36,7 +36,7 @@ Tee React.js-sovellus, jossa käyttäjä voi:
 - Firebase Authentication: Jos käytät Firebasea, implementoi sen valmiit kirjautumis- ja rekisteröintitoiminnot.
 - JWT: Käytä kirjastoja kuten jsonwebtoken ja axios käyttäjätokenin validointiin.
 
-**Vaiheet**
+## Vaiheet
 - Asenna tarvittavat kirjastot:
 - Luo React-komponentit:
 

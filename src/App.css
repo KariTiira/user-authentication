@@ -1,0 +1,37 @@
+.input-box {
+    display: flex;
+    margin: 10px;
+}
+
+.label-name {
+    margin-right: 5px;
+}
+
+.submit-btn {
+    margin: 10px;
+}
+
+.navbar-link {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.navbar-link-home {
+    font-weight: bold;
+}
+
+
+.navbar-link>a {
+    text-decoration: none;
+}
+
+.navbar>ul {
+    display: flex;
+    text-decoration: none;
+
+}
+
+.navbar {
+    background-color: bisque;
+
+}
